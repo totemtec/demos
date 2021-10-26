@@ -2,8 +2,10 @@
 
 
 function preload() {
-  if (window.location.protocol != "https:" && window.location.protocol != 'file:')
-    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+  // if (window.location.protocol != "https:" && window.location.protocol != 'file:')
+  //   window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+  if (window.location.protocol != "http:" && window.location.protocol != 'file:')
+    window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
 }
 
 function setup() {
@@ -935,7 +937,7 @@ var piano = {
       }
 
       if (!pitch.sound) {
-        pitch.sound = loadSound('https://bideyuanli.com/wp-content/uploads/2014/03/' + pitch.inter + '.mp3');
+        pitch.sound = loadSound('/wp-content/uploads/2014/03/' + pitch.inter + '.mp3');
 
         data.fft.setInput(pitch.sound);
       }
